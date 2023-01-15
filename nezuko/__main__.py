@@ -182,9 +182,9 @@ async def start(_, message):
             )
     else:
         await message.reply_video(
-            photo="https://telegra.ph/file/3ffaa71cc4eb14413ead0.mp4",
+            video="https://telegra.ph/file/3ffaa71cc4eb14413ead0.mp4",
             caption=home_text_pm,
-            reply_markup=home_keyboard_pm,
+            reply_markup=home_keyboard_pm
         )
     return
 
