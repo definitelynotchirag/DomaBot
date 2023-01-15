@@ -127,9 +127,8 @@ home_keyboard_pm = InlineKeyboardMarkup(
 )
 
 home_text_pm = (
-    f"Hey there! My name is {BOT_NAME}. I can manage your "
-    + "group with lots of useful features, feel free to "
-    + "add me to your group."
+    "𝑯𝒆𝒚 𝒕𝒉𝒆𝒓𝒆! 𝑴𝒚 𝒏𝒂𝒎𝒆 𝒊𝒔 𝑫𝒐𝒎𝒂.\n
+𝑰 𝒄𝒂𝒏 𝒎𝒂𝒏𝒂𝒈𝒆 𝒚𝒐𝒖𝒓 𝒈𝒓𝒐𝒖𝒑 𝒘𝒊𝒕𝒉 𝒍𝒐𝒕𝒔 𝒐𝒇 𝒖𝒔𝒆𝒇𝒖𝒍 𝒇𝒆𝒂𝒕𝒖𝒓𝒆𝒔, 𝒇𝒆𝒆𝒍 𝒇𝒓𝒆𝒆 𝒕𝒐 𝒂𝒅𝒅 𝒎𝒆 𝒕𝒐 𝒚𝒐𝒖𝒓 𝒈𝒓𝒐𝒖𝒑."
 )
 
 
@@ -183,8 +182,8 @@ async def start(_, message):
                 reply_markup=keyb,
             )
     else:
-        await message.reply_photo(
-            photo="https://telegra.ph/file/886b5cf867dff820f7ccc.jpg",
+        await message.reply_video(
+            photo="https://telegra.ph/file/3ffaa71cc4eb14413ead0.mp4",
             caption=home_text_pm,
             reply_markup=home_keyboard_pm,
         )
