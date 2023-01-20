@@ -35,6 +35,7 @@ from nezuko.modules import ALL_MODULES
 from nezuko.modules.sudoers import bot_sys_stats
 from nezuko.utils import paginate_modules
 from nezuko.utils.constants import MARKDOWN
+from nezuko.utils import formatter
 from nezuko.utils.dbfunctions import clean_restart_stage
 
 from nezuko.utils.dbfunctions import (
@@ -140,10 +141,11 @@ home_keyboard_pm = InlineKeyboardMarkup(
     ]
 )
 bot_uptime = int(time.time() - bot_start_time)
+uptime = {formatter.get_readable_time((bot_uptime))}
 # served_chats = len(get_served_chats())
 # served_users = len(get_served_users())
 home_text_pm = (
-   f"──────「𝘋𝘖𝘔𝘈」 ──────\n𝑯𝒆𝒚 𝒕𝒉𝒆𝒓𝒆! 𝑴𝒚 𝒏𝒂𝒎𝒆 𝒊𝒔 𝑫𝒐𝒎𝒂.\n𝑰 𝒄𝒂𝒏 𝒎𝒂𝒏𝒂𝒈𝒆 𝒚𝒐𝒖𝒓 𝒈𝒓𝒐𝒖𝒑 𝒘𝒊𝒕𝒉 𝒍𝒐𝒕𝒔 𝒐𝒇 𝒖𝒔𝒆𝒇𝒖𝒍 𝒇𝒆𝒂𝒕𝒖𝒓𝒆𝒔, 𝒇𝒆𝒆𝒍 𝒇𝒓𝒆𝒆 𝒕𝒐 𝒂𝒅𝒅 𝒎𝒆 𝒕𝒐 𝒚𝒐𝒖𝒓 𝒈𝒓𝒐𝒖𝒑.\n➖➖➖➖➖➖➖➖➖➖➖➖➖\n❍ Uptime: {bot_uptime}\ns➖➖➖➖➖➖➖➖➖➖➖➖➖\n➛ Try The Guidelines Button Below To Know My Abilities ××"
+   f"──────「𝘋𝘖𝘔𝘈」 ──────\n𝑯𝒆𝒚 𝒕𝒉𝒆𝒓𝒆! 𝑴𝒚 𝒏𝒂𝒎𝒆 𝒊𝒔 𝑫𝒐𝒎𝒂.\n𝑰 𝒄𝒂𝒏 𝒎𝒂𝒏𝒂𝒈𝒆 𝒚𝒐𝒖𝒓 𝒈𝒓𝒐𝒖𝒑 𝒘𝒊𝒕𝒉 𝒍𝒐𝒕𝒔 𝒐𝒇 𝒖𝒔𝒆𝒇𝒖𝒍 𝒇𝒆𝒂𝒕𝒖𝒓𝒆𝒔, 𝒇𝒆𝒆𝒍 𝒇𝒓𝒆𝒆 𝒕𝒐 𝒂𝒅𝒅 𝒎𝒆 𝒕𝒐 𝒚𝒐𝒖𝒓 𝒈𝒓𝒐𝒖𝒑.\n➖➖➖➖➖➖➖➖➖➖➖➖➖\n❍ Uptime: {uptime}\n➖➖➖➖➖➖➖➖➖➖➖➖➖\n➛ Try The Guidelines Button Below To Know My Abilities ××"
 )
 
 
