@@ -37,6 +37,14 @@ from nezuko.utils import paginate_modules
 from nezuko.utils.constants import MARKDOWN
 from nezuko.utils.dbfunctions import clean_restart_stage
 
+from nezuko.utils.dbfunctions import (
+    get_served_chats,
+    get_served_users
+)
+import time
+from nezuko import (
+    bot_start_time
+)
 loop = asyncio.get_event_loop()
 
 HELPABLE = {}
@@ -125,9 +133,11 @@ home_keyboard_pm = InlineKeyboardMarkup(
         ],
     ]
 )
-
+bot_uptime = int(time.time() - bot_start_time)
+served_chats = len(await get_served_chats())
+served_users = len(await get_served_users())
 home_text_pm = (
-    "𝑯𝒆𝒚 𝒕𝒉𝒆𝒓𝒆! 𝑴𝒚 𝒏𝒂𝒎𝒆 𝒊𝒔 𝑫𝒐𝒎𝒂.\n𝑰 𝒄𝒂𝒏 𝒎𝒂𝒏𝒂𝒈𝒆 𝒚𝒐𝒖𝒓 𝒈𝒓𝒐𝒖𝒑 𝒘𝒊𝒕𝒉 𝒍𝒐𝒕𝒔 𝒐𝒇 𝒖𝒔𝒆𝒇𝒖𝒍 𝒇𝒆𝒂𝒕𝒖𝒓𝒆𝒔, 𝒇𝒆𝒆𝒍 𝒇𝒓𝒆𝒆 𝒕𝒐 𝒂𝒅𝒅 𝒎𝒆 𝒕𝒐 𝒚𝒐𝒖𝒓 𝒈𝒓𝒐𝒖𝒑."
+   f"──────「𝘋𝘖𝘔𝘈」 ──────\n𝑯𝒆𝒚 𝒕𝒉𝒆𝒓𝒆! 𝑴𝒚 𝒏𝒂𝒎𝒆 𝒊𝒔 𝑫𝒐𝒎𝒂.\n𝑰 𝒄𝒂𝒏 𝒎𝒂𝒏𝒂𝒈𝒆 𝒚𝒐𝒖𝒓 𝒈𝒓𝒐𝒖𝒑 𝒘𝒊𝒕𝒉 𝒍𝒐𝒕𝒔 𝒐𝒇 𝒖𝒔𝒆𝒇𝒖𝒍 𝒇𝒆𝒂𝒕𝒖𝒓𝒆𝒔, 𝒇𝒆𝒆𝒍 𝒇𝒓𝒆𝒆 𝒕𝒐 𝒂𝒅𝒅 𝒎𝒆 𝒕𝒐 𝒚𝒐𝒖𝒓 𝒈𝒓𝒐𝒖𝒑.\n➖➖➖➖➖➖➖➖➖➖➖➖➖\n❍ Uptime: {bot_uptime}\n❍ {served_users} Users across {served_chats} Chats➖➖➖➖➖➖➖➖➖➖➖➖➖\n➛ Try The Guidelines Button Below To Know My Abilities ××
 )
 
 
