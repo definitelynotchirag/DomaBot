@@ -131,6 +131,12 @@ home_keyboard_pm = InlineKeyboardMarkup(
                 url=f"http://t.me/{BOT_USERNAME}?startgroup=new",
             )
         ],
+        [
+            InlineKeyboardButton(
+                text="Support",
+                url=f"https://t.me/DOMAXbot_Support_GC",
+            )
+        ],
     ]
 )
 bot_uptime = int(time.time() - bot_start_time)
@@ -158,6 +164,12 @@ keyboard = InlineKeyboardMarkup(
                 text="System Stats 💻",
                 callback_data="stats_callback",
             ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="Support",
+                url=f"https://t.me/DOMAXbot_Support_GC",
+            )
         ],
     ]
 )
